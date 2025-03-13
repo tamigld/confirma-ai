@@ -24,8 +24,8 @@ export default function GuestList() {
   }, [guests]);
 
   return (
-    <div className='bg-gray-100 max-h-full w-full font-montserrat'>
-      <div className='bg-dourado-claro rounded-4xl '>
+    <div className='bg-gray-100 max-h-f overflow-scroll w-full font-montserrat'>
+      <div className='bg-dourado-claro rounded-4xl  max-h-full'>
         <table className='w-full border-collapse'>
           <thead>
             <tr className=' bg-transparent text-white rounded-tl-4xl rounded-tr-4xl'>
@@ -85,11 +85,7 @@ export default function GuestList() {
           </span>
         </div>
       </div>
-      <ModalLink
-        data={data}
-        isOpen={open}
-        onClose={() => setOpen(false)}
-      />
+      <ModalLink data={data} isOpen={open} onClose={() => setOpen(false)} />
     </div>
   );
 }

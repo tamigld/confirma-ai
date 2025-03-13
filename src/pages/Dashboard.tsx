@@ -48,8 +48,8 @@ export default function Dashboard(){
 
   return (
     <section className='w-full h-screen bg-marfim'>
-      <Header />
-      <div className='px-20 py-14 w-full flex flex-col gap-4'>
+      <Header className="fixed bg-marfim"/>
+      <div className='px-20 pb-10 pt-24 w-full flex flex-col gap-4 h-screen'>
         <h1 className='text-texto text-4xl font-montserrat font-semibold'>
           Lista de Convidados
         </h1>
