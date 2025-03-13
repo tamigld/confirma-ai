@@ -28,10 +28,10 @@ export default function ModalConfirm({ data, isOpen, onClose, type }: IModal){
   };
 
   return (
-    <div className='fixed inset-0 flex items-center justify-center bg-amber-950/45 text-texto font-montserrat'>
+    <div className='px-5 fixed inset-0 flex items-center justify-center bg-amber-950/45 text-texto font-montserrat'>
       <div className='bg-[#F7F4EF] p-6 rounded-2xl shadow-lg w-96 gap-4 flex flex-col items-center'>
         <img src={types[type].img} className='w-40' />
-        <h1 className='font-semibold'>{types[type].title}</h1>
+        <h1 className='font-semibold text-center'>{types[type].title}</h1>
         <p className='text-center'>{types[type].subtitle}</p>
         <Button onClick={onClose} label='Fechar' colorType='cinza' />
       </div>
