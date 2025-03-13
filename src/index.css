@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playball&display=swap');
+@import "tailwindcss";
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+}
+
+@theme {
+  --font-montserrat: "Montserrat", "sans-serif";
+  --font-playball: "Playball", "cursive";
+  --color-marfim: #F7F5F2;
+  --color-dourado-claro: #D9B382;
+  --color-rubi: #6D454C;
+  --color-nude: #F5E6D1;
+  --color-texto: #4B4429;
+  --color-cinza: #979797
+}
