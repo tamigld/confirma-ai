@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoAdd, IoReload, IoSearch } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 import Button from "../components/Button";
 import GuestList from "../components/GuestList";
 import Header from "../components/Header";
@@ -9,6 +10,9 @@ import { useGuests } from "../hooks/useGuests";
 
 export default function Dashboard(){
   const [open, setOpen] = useState<boolean>(false);
+  const { user, loading } = useAuth();
+  const navigate = useNavigate();
+
   const { fetchGuests } = useGuests();
 
   const openModal = () => {
@@ -19,7 +23,20 @@ export default function Dashboard(){
     fetchGuests();
   };
 
-  const { user } = useAuth();
+  useEffect(() => {
+    if (loading) return;
+    if (!user) {
+      navigate('/');
+    }
+  }, [user, loading, navigate]);
+
+  if (loading) {
+    return (
+      <div className='h-screen w-full flex items-center justify-center font-montserrat'>
+        Loading...
+      </div>
+    );
+  }
 
   if (!user) {
     return (
