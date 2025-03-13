@@ -1,4 +1,5 @@
 import { IoLink } from 'react-icons/io5';
+import { useNavigate } from 'react-router-dom';
 import { Guest } from '../../hooks/useGuestsStore';
 import Button from '../Button';
 
@@ -9,6 +10,8 @@ type IModal = {
 };
 
 export default function ModalLink({ data, isOpen, onClose }: IModal){
+  const navigate = useNavigate();
+
   if (!isOpen) return null;
 
   return (
@@ -17,10 +20,10 @@ export default function ModalLink({ data, isOpen, onClose }: IModal){
         <h2 className='font-semibold'>Link de compartilhamento</h2>
         <p>Convidado: {data.nome}</p>
         <Button
-          onClick={() => window.open(`/invite/${data._id}`, '_blank')}
+          onClick={() => navigate(`/invite/${data._id}`)}
           label={
             <div className='flex gap-2 items-center justify-center'>
-              <IoLink/>
+              <IoLink />
               Acessar convite
             </div>
           }
