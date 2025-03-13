@@ -13,6 +13,7 @@ export type GuestsStore = {
   addGuest: (guest: Guest) => void;
   removeGuestById: (id: string) => void;
   editGuestById: (id: string, updatedGuest: Partial<Guest>) => void;
+  findGuestById: (id: string) => void
 };
 
 export const useGuestsStore = create<GuestsStore>((set, get) => ({
@@ -29,4 +30,5 @@ export const useGuestsStore = create<GuestsStore>((set, get) => ({
       index.toString() === id ? { ...guest, ...updatedGuest } : guest,
     ),
   })),
+  findGuestById: (id: string) => get().guests.find(item => item._id === id)
 }));

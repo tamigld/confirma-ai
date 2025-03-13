@@ -89,7 +89,6 @@ export default function GuestList() {
         data={data}
         isOpen={open}
         onClose={() => setOpen(false)}
-        link='Acessar convite'
       />
     </div>
   );

@@ -6,10 +6,9 @@ type IModal = {
   data: Guest,
   isOpen: boolean,
   onClose: () => void,
-  link: string
 };
 
-export default function ModalLink({ data, isOpen, onClose, link }: IModal){
+export default function ModalLink({ data, isOpen, onClose }: IModal){
   if (!isOpen) return null;
 
   return (
